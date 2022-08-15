@@ -55,18 +55,6 @@ void createSnakeBody(int x, int y)
 }
 
 
-//takes as input x and y position of the console
-//moves the cursore to there
-void gotoxy(int x, int y) {
-	COORD coordinates; //Data type of co-ordinates
-	coordinates.X = x; //Assign value to X- Co-ordinate
-	coordinates.Y = y; //Assign value to Y Co-ordinate
-
-	SetConsoleCursorPosition(
-		GetStdHandle(STD_OUTPUT_HANDLE), coordinates);
-}
-
-
 //create map by filling the edges with 1 (#)
 void createMap() {
 	for (int i = 0; i < displaySize; i++) {
@@ -181,8 +169,6 @@ bool runGame(int x, int y)
 		}
 		else { //if the current body part is not the head
 
-			//if the current body location is  border dont do anything
-			//if (map[currentBody->y][currentBody->x] == 1)continue;
 
 			//save the temporaty location data of the firs element into a second temporary location 
 			tempX_2 = tempX_1;
